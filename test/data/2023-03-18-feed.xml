@@ -1,21 +1,4 @@
-const express = require("express");
-const router = express.Router();
-
-router.get("/pods", (req, res) => {
-  // Get the latest XML (from cache or URL)
-
-  // Parse the XML
-
-  // Manipulate the XML
-
-  // Render the XML
-
-  res.type('xml').send(mibContents)
-});
-
-module.exports = router;
-
-const mibContents = `<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:art19="https://art19.com/xmlns/rss-extensions/1.0" xmlns:googleplay="http://www.google.com/schemas/play-podcasts/1.0/" version="2.0">
   <channel>
     <title>Men In Blazers</title>
@@ -26105,4 +26088,3 @@ See Privacy Policy at https://art19.com/privacy and California Privacy Notice at
     </item>
   </channel>
 </rss>
-`;
