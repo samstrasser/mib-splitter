@@ -21,6 +21,14 @@ module.exports = class MibFeed {
     this._channel = feedData.rss.channel;
   }
 
+  get title() {
+    return this._channel.title;
+  }
+
+  set title(newTitle) {
+    this._channel.title = newTitle;
+  }
+
   generateXML() {
     // TODO(learnJS): I'm not sure if I need to do this;
     // all my writes to _channel should presumably come along for the ride?
@@ -33,3 +41,4 @@ module.exports = class MibFeed {
   }
 
 };
+
