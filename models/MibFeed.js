@@ -45,12 +45,18 @@ module.exports = class MibFeed {
     this._channel['atom:link'].__attr_href = newLink;
   }
 
+  set logoLink(newLink) {
+    this._channel.image.url = newLink;
+    this._channel['itunes:image'].__attr_href = newLink;
+  }
+
   changeBasicInfo(options) {
-    // options.keys: [title, description, link, rssLink]
+    // options.keys: [title, description, link, rssLink, logoLink]
     this.title = options.title;
     this.description = options.description;
     this.link = options.link;
     this.rssLink = options.rssLink;
+    this.logoLink = options.logoLink;
 
     return true;
   }

@@ -15,12 +15,18 @@ router.get("/flagship", (req, res) => {
     host: req.get('host'),
     pathname: req.originalUrl
   });
+  let logoUrl = url.format({
+    protocol: req.protocol,
+    host: req.get('host'),
+    pathname: '/img/logoFlagship.jpeg'
+  });
 
   feed.changeBasicInfo({
     title: 'Flagship',
     description: 'Flagship pods only.',
     link: currUrl, // TODO: do I need this?
-    rssLink: currUrl
+    rssLink: currUrl,
+    logoLink: logoUrl
   });
 
   // Render the new XML

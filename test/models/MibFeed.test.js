@@ -8,7 +8,8 @@ test('sets basic info', () => {
         title: 'Title To Append',
         description: 'Desc to append',
         link: 'TODO-HTTP-LINK-URL',
-        rssLink: 'TODO-RSS-LINK-URL'
+        rssLink: 'TODO-RSS-LINK-URL',
+        logoLink: 'TODO-IMG-LINK-URL'
     });
 
     // TODO(tests): test all the basic info changes?
@@ -21,4 +22,7 @@ test('sets basic info', () => {
 
     // atom:link -- href attr
     // itunes:new-feed-url
+
+    // image.url
+    // itunes:image -- href attr
 });
