@@ -29,6 +29,12 @@ module.exports = class MibFeed {
     this._channel.title = newTitle;
   }
 
+  changeBasicInfo(options) {
+    // options.keys: [title, description, link, rssLink]
+
+    return true;
+  }
+
   generateXML() {
     // TODO(learnJS): I'm not sure if I need to do this;
     // all my writes to _channel should presumably come along for the ride?
