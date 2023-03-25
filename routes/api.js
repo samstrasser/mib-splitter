@@ -1,7 +1,20 @@
 const express = require("express");
 const router = express.Router();
+const url = require('url');
 
 router.get("/pods", (req, res) => {
+  console.log(
+    {
+      protocol: req.protocol,
+      host: req.get('host'),
+      pathname: req.originalUrl,
+      formatted: url.format({
+        protocol: req.protocol,
+        host: req.get('host'),
+        pathname: req.originalUrl
+      })
+    }
+  );
   // Get the latest XML (from cache or URL)
 
   // Parse the XML
