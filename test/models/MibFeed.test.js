@@ -2,13 +2,23 @@ const MibFeed = require('../../models/MibFeed.js');
 const { readFileSync } = require('fs');
 const feedContents = readFileSync('./test/data/2023-03-18-feed.xml', 'utf8');
 
-test('gets title from static feed', () => {
+test('sets basic info', () => {
     let feed = new MibFeed(feedContents);
-    expect(feed.title).toBe('Men In Blazers')
-});
+    feed.changeBasicInfo({
+        title: 'Title To Append',
+        description: 'Desc to append',
+        link: 'TODO-HTTP-LINK-URL',
+        rssLink: 'TODO-RSS-LINK-URL'
+    });
 
-test('can change title', () => {
-    let feed = new MibFeed(feedContents);
-    feed.title = 'new title';
-    expect(feed.title).toBe('new title')
+    // TODO(tests): test all the basic info changes?
+    // title √
+    expect(feed._channel.title).toMatch(/Title To Append/); 
+    // image.title
+
+    // description
+    // itunes:summary
+
+    // atom:link -- href attr
+    // itunes:new-feed-url
 });

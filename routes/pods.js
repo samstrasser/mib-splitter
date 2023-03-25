@@ -4,7 +4,7 @@ const router = express.Router();
 const MibFeed = require('../models/MibFeed.js');
 const url = require('url');
 
-router.get("/orig", (req, res) => {
+router.get("/flagship", (req, res) => {
   // TODO: Get the latest XML (from cache or URL)
   let rawXml = mibContents;
 
@@ -17,8 +17,8 @@ router.get("/orig", (req, res) => {
   });
 
   feed.changeBasicInfo({
-    title: 'The Original',
-    description: 'Classic Episodes Only. ',
+    title: 'Flagship',
+    description: 'Flagship pods only.',
     link: currUrl, // TODO: do I need this?
     rssLink: currUrl
   });
